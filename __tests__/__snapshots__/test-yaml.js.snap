@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reads yaml data 1`] = `
+Object {
+  "layout": Object {
+    "footer": Object {
+      "content": "Footer Content",
+      "copyright": "© 2019 Copyright",
+    },
+    "navbar": Object {
+      "title": "Navbar Title",
+    },
+  },
+  "pages": Array [
+    Object {
+      "content": "# About Page Content",
+      "path": "/about",
+      "title": "About Page",
+    },
+    Object {
+      "content": "# Index Page Content",
+      "path": "/",
+      "title": "Index Page",
+    },
+  ],
+}
+`;
