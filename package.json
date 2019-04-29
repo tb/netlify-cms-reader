@@ -9,7 +9,10 @@
     "test": "jest"
   },
   "keywords": [
-    "netlify-cms"
+    "netlify-cms",
+    "yaml",
+    "gatsby-plugin",
+    "gatsby"
   ],
   "dependencies": {
     "globby": "*",
