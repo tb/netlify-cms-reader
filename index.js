@@ -5,8 +5,8 @@ const globby = require('globby')
 const { reduce } = require('p-iteration')
 
 const markdownLoad = s => {
-  const {content, data} = matter(s)
-  return {...data, content}
+  const { content, data } = matter(s)
+  return { ...data, content }
 }
 
 const getFiles = async patterns =>
@@ -19,21 +19,20 @@ const getData = async config =>
     config.collections,
     async (data, c) => {
       if (c.folder) {
-        data[c.name] = c.format === 'yml' ?
-          (await getFiles(`${c.folder}/*.yml`)).map(yaml.safeLoad)
-        :
-          (await getFiles(`${c.folder}/*.md`)).map(markdownLoad)
+        data[c.name] =
+          c.format === 'yml'
+            ? (await getFiles(`${c.folder}/*.yml`)).map(yaml.safeLoad)
+            : (await getFiles(`${c.folder}/*.md`)).map(markdownLoad)
       }
 
       if (c.files) {
         data[c.name] = await reduce(
           c.files,
-          async (fdata, {file, ...fc}) => {
-
-            fdata[fc.name] = fc.format === 'yml' ?
-              (await yaml.safeLoad(fs.readFileSync(file, 'utf8')))
-            :
-              (await markdownLoad(fs.readFileSync(file, 'utf8')))
+          async (fdata, { file, ...fc }) => {
+            fdata[fc.name] =
+              fc.format === 'yml'
+                ? await yaml.safeLoad(fs.readFileSync(file, 'utf8'))
+                : await markdownLoad(fs.readFileSync(file, 'utf8'))
 
             return fdata
           },
@@ -48,5 +47,5 @@ const getData = async config =>
 
 module.exports = {
   getConfig,
-  getData
+  getData,
 }

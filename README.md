@@ -1,5 +1,8 @@
 # Netlify CMS Reader
 
+[![Build Status](https://travis-ci.org/tb/netlify-cms-reader.svg?branch=master)](https://travis-ci.org/tb/netlify-cms-reader)
+[![npm version](https://badge.fury.io/js/netlify-cms-reader.svg)](http://badge.fury.io/js/netlify-cms-reader)
+
 Read NetlifyCMS config and data.
 
 ## Basic usage
