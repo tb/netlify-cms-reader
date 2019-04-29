@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-reader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Read NetlifyCMS config and data",
   "author": "Tomasz Bak <tb@tomaszbak.com>",
   "license": "MIT",
@@ -18,8 +18,7 @@
   "dependencies": {
     "globby": "*",
     "gray-matter": "*",
-    "js-yaml": "*",
-    "p-iteration": "*"
+    "js-yaml": "*"
   },
   "devDependencies": {
     "jest": "^24.7.1",
