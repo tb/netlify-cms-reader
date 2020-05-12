@@ -5,3 +5,11 @@ test('reads yaml data', async () => {
   const data = await getData(config)
   expect(data).toMatchSnapshot()
 })
+
+test('reads yaml data with filtered folder collections', async () => {
+  const config = getConfig(
+    '__tests__/yaml/config-with-filtered-folder-collections.yml'
+  )
+  const data = await getData(config)
+  expect(data).toMatchSnapshot()
+})

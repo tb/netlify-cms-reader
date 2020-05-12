@@ -1,0 +1,35 @@
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+  branch: master
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: unfiltered
+    label: "Unfiltered"
+    folder: __tests__/yaml/filtered
+    format: yml
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: "Filter", name: filter, widget: select, multiple: true, options: ["A","B","C","D"]}
+      - {label: "Content", name: content, widget: markdown}
+  - name: filtered_to_a_and_b
+    label: "Filtered to A and B"
+    folder: __tests__/yaml/filtered
+    format: yml
+    filter: {field: "filter", value: ["A", "B"]}
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: "Filter", name: filter, widget: select, multiple: true, options: ["A","B","C","D"]}
+      - {label: "Content", name: content, widget: markdown}
+  - name: filtered_to_c_and_d
+    label: "Filtered to C and D"
+    folder: __tests__/yaml/filtered
+    format: yml
+    filter: {field: "filter", value:  ["C", "D"]}
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: "Filter", name: filter, widget: select, multiple: true, options: ["A","B","C","D"]}
+      - {label: "Content", name: content, widget: markdown}
