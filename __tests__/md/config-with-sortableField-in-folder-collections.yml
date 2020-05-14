@@ -1,0 +1,17 @@
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+  branch: master
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: sortable
+    label: "Sortable"
+    folder: __tests__/md/sortable
+    sortableFields: ["index", "title"]
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: "Index", name: index, widget: number, valueType: int}
+      - {label: "Content", name: content, widget: markdown}

@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`honors first of the sortableField list 1`] = `
+Object {
+  "sortable": Array [
+    Object {
+      "content": "# Page With Index 1 Content",
+      "index": 1,
+      "title": "Page With Index 1",
+    },
+    Object {
+      "content": "# Page With Index 2 Content",
+      "index": 2,
+      "title": "Page With Index 2",
+    },
+  ],
+}
+`;
+
 exports[`reads md data 1`] = `
 Object {
   "layout": Object {

@@ -31,19 +31,25 @@ const filterFolder = (folder, format, field, value) => {
 
 const getData = config =>
   config.collections.reduce((data, c) => {
+    let tmpData
     if (c.folder) {
       if (c.filter && c.filter.field && c.filter.value) {
-        data[c.name] = filterFolder(
+        tmpData = filterFolder(
           c.folder,
           c.format,
           c.filter.field,
           c.filter.value
         )
       } else {
-        data[c.name] =
+        tmpData =
           c.format === 'yml'
             ? readFiles(`${c.folder}/*.yml`).map(yaml.safeLoad)
             : readFiles(`${c.folder}/*.md`).map(markdownLoad)
+      }
+      if (c.sortableFields && c.sortableFields[0]) {
+        data[c.name] = sortBy(tmpData, c.sortableFields[0])
+      } else {
+        data[c.name] = tmpData.slice()
       }
     }
 
