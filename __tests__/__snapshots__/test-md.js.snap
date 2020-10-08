@@ -26,3 +26,46 @@ Object {
   ],
 }
 `;
+
+exports[`reads md data with filtered folder collections 1`] = `
+Object {
+  "filtered_to_a_and_b": Array [
+    Object {
+      "content": "# Content with filter set to A or B",
+      "filter": Array [
+        "A",
+        "B",
+      ],
+      "title": "To be filtered to A or B",
+    },
+  ],
+  "filtered_to_c_and_d": Array [
+    Object {
+      "content": "# Content with filter set to C or D",
+      "filter": Array [
+        "D",
+        "C",
+      ],
+      "title": "To be filtered to C or D",
+    },
+  ],
+  "unfiltered": Array [
+    Object {
+      "content": "# Content with filter set to A or B",
+      "filter": Array [
+        "A",
+        "B",
+      ],
+      "title": "To be filtered to A or B",
+    },
+    Object {
+      "content": "# Content with filter set to C or D",
+      "filter": Array [
+        "D",
+        "C",
+      ],
+      "title": "To be filtered to C or D",
+    },
+  ],
+}
+`;
