@@ -16,14 +16,14 @@
     "gatsby"
   ],
   "dependencies": {
-    "globby": "*",
+    "globby": "^11.0.1",
     "gray-matter": "*",
-    "js-yaml": "*",
+    "js-yaml": "^3.14.1",
     "lodash.isequal": "^4.5.0",
     "lodash.sortby": "^4.7.0"
   },
   "devDependencies": {
-    "jest": "^24.7.1",
-    "prettier": "1.17.0"
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
   }
 }
