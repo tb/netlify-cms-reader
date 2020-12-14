@@ -13,3 +13,11 @@ test('reads md data with filtered folder collections', async () => {
   const data = await getData(config)
   expect(data).toMatchSnapshot()
 })
+
+test('honors first of the sortableField list', async () => {
+  const config = getConfig(
+    '__tests__/md/config-with-sortableField-in-folder-collections.yml'
+  )
+  const data = await getData(config)
+  expect(data).toMatchSnapshot()
+})
